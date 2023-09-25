@@ -1,13 +1,12 @@
-# java-library-template 🎨
+# java-library-template-demo
 
 [![Use this template](https://img.shields.io/badge/from-java--library--template-brightgreen?logo=dropbox)](https://github.com/thriving-dev/java-library-template/generate)
-[![Java CI](https://github.com/thriving-dev/java-library-template/actions/workflows/1.pipeline.yml/badge.svg)](https://github.com/thriving-dev/java-library-template/actions/workflows/1.pipeline.yml)
-[![Maven Central](https://img.shields.io/maven-central/v/dev.thriving.oss/java-library-template.svg)](https://central.sonatype.com/artifact/dev.thriving.oss/java-library-template)
+[![Java CI](https://github.com/thriving-dev-test/java-library-template-demo/actions/workflows/1.pipeline.yml/badge.svg)](https://github.com/thriving-dev-test/java-library-template-demo/actions/workflows/1.pipeline.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.thriving.oss/java-library-template-demo.svg)](https://central.sonatype.com/artifact/dev.thriving.oss/java-library-template-demo)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://thriving-dev.github.io/java-library-template/javadoc/)
-[![CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://thriving-dev-test.github.io/java-library-template-demo/javadoc/)
 
-_TLDR:_ Java Library GitHub Template Repository
+Automated migration completed, enjoy the template.
 
 ## Features
 - 🥷 One-click **automated initial project migration workflow** (GitHub Action)
@@ -28,7 +27,7 @@ _TLDR:_ Java Library GitHub Template Repository
    The jobs expect a secret by the name `CI_GITHUB_TOKEN` that holds a PAT with _write_ permission for _Content_.
 
    To create a new access token, the following steps are required (ref [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)):
-   1. If the new repo owner is an organisation, **enrol** the organisation for '**Fine-grained personal access tokens**'. In the organisation '**Settings > Third-party Access > Personal access tokens**'.
+   1. If the new repo owner is an organisation, **enrol** the organisation for '**Fine-grained personal access tokens**'. In the organisation ['Settings > Third-party Access > Personal access tokens'](https://github.com/organizations/thriving-dev-test/settings/personal-access-tokens).
    2. Head to the [Developer settings](https://github.com/settings/tokens?type=beta) and **enrol** your personal account for the new '**Fine-grained personal access tokens**'. (That's a one-off for your account and you might already have done this before)
    3. Next, click on the button '**Generate new token**' and create a token for the target _**Resource owner**_, with access to your project and the following '**Repository Permissions**'
       * **Contents:** **Read** and **Write** access to code
@@ -53,7 +52,7 @@ _TLDR:_ Java Library GitHub Template Repository
 
 4. Final one-off tasks
    * Choose & update the LICENSE, [here](LICENSE)
-   * Update _Maven Publication_ details [here](java-library-template/build.gradle.kts#L6-L13)
+   * Update _Maven Publication_ details [here](java-library-template-demo/build.gradle.kts#L6-L13)
    * [Configure GitHub Pages](#prerequisites-configure-github-pages) to deploy branch 'gh-pages' (Javadoc)
    * Add secrets required for [publishing to Maven Central](#prerequisites-sonatype-credentials--gpg-signing-key)
    * Create and provide a PAT required for [release pipeline](#prerequisites-pat-provided-as-ci_github_token)
@@ -63,7 +62,7 @@ _TLDR:_ Java Library GitHub Template Repository
 The project template consists of three top-level _folders_:
 * `.github/`: Defines the GitHub Actions CI tasks and templates for new pull requests, issues, etc.
 * `gradle/`: Contains Gradle Configuration files such as the Gradle [Version Catalog](https://docs.gradle.org/current/userguide/platforms.html) and the Gradle Wrapper.
-* `java-library-template/`: The library source code (Gradle sub-project).
+* `java-library-template-demo/`: The library source code (Gradle sub-project).
 
 In addition, following _files_ are worth highlighting:
 * `gradle/libs.versions.toml`: A [conventional file](https://docs.gradle.org/current/userguide/platforms.html#sub:conventional-dependencies-toml) to declare a version catalog.
@@ -72,7 +71,7 @@ In addition, following _files_ are worth highlighting:
 * `**/build.gradle.kts`: Gradle build file
 
 ## CI/CD Pipeline
-The heart of this template is the 'Main GitHub Actions CI/CD Pipeline'. See it in [Actions](https://github.com/thriving-dev/java-library-template/actions/workflows/1.pipeline.yml) (👻).
+The heart of this template is the ['Main GitHub Actions CI/CD Pipeline'](https://github.com/thriving-dev-test/java-library-template-demo/actions/workflows/1.pipeline.yml).
 
 ![image](https://github.com/thriving-dev/java-library-template/assets/10864443/8e5436c3-f807-4617-9e77-6d21e9dfb7c2)
 
@@ -111,7 +110,7 @@ The GH actions job [callable.publish-sonatype.yml](.github/workflows/callable.pu
 | `GPG_SIGNING_KEY`        | The GPG private key to sign your artifacts (in ascii-armored format). You can obtain it with `gpg --armor --export-secret-keys <your@email.here>` or you can create one key online on [pgpkeygen.com](https://pgpkeygen.com). |
 | `GPG_SIGNING_PASSPHRASE` | The passphrase for unlocking the secret key. (you picked it when creating the key).                                                                                                                                           |
 
-Please define the secrets via your repository settings. (Settings > Security > Secrets and variables > Actions)
+Please define the secrets via your repository settings. ([Settings > Security > Secrets and variables > Actions](https://github.com/thriving-dev-test/java-library-template-demo/settings/secrets/actions))
 <img width="800" alt="Preview of Javadoc published to GitHub Pages by the CI/CD pipeline" src="https://github.com/thriving-dev/java-library-template/assets/10864443/e6cf928c-6665-43fc-9506-c29d210b18de">
 
 ## Release Process
@@ -147,7 +146,7 @@ A Javadoc website of your library, generated by gradle, is 'published' to GitHub
 <img width="680" alt="Preview of Javadoc published to GitHub Pages by the CI/CD pipeline" src="https://github.com/thriving-dev/java-library-template/assets/10864443/119e8055-2755-40d4-8ec4-69bdc2e5339b">
 
 ### Prerequisites: Configure GitHub Pages
-To host the generated Javadoc, configure GitHub Pages for your repository to deploy from branch `gh-pages`. You can also find all deployments under ['pages-build-deployment'](https://github.com/thriving-dev/java-library-template/actions/workflows/pages/pages-build-deployment).
+To host the generated Javadoc, configure GitHub Pages for your repository to deploy from branch `gh-pages`. You can also find all deployments under ['pages-build-deployment'](https://github.com/thriving-dev-test/java-library-template-demo/actions/workflows/pages/pages-build-deployment).
 
 > ℹ️ The branch is created with the first CI/CD pipeline run. ('Publish javadoc' job)
 
@@ -155,7 +154,7 @@ To host the generated Javadoc, configure GitHub Pages for your repository to dep
 
 ## Security & CodeQL Analysis
 ### Common Vulnerabilities and Exposures (CVE)
-The libraries gradle dependencies are scanned for known [CVE](https://www.cve.org/) with **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**. The scan results can be reviewed and managed under 'Security > Vulnerability alerts > Code scanning'.
+The libraries gradle dependencies are scanned for known [CVE](https://www.cve.org/) with **[aquasecurity/trivy](https://github.com/aquasecurity/trivy)**. The scan results can be reviewed and managed under [Security > Vulnerability alerts > Code scanning](https://github.com/thriving-dev-test/java-library-template-demo/security/code-scanning).
 
 Scans are triggered
 1. with each main CI/CD pipeline run
@@ -180,8 +179,4 @@ The recommended way to enable renovate is to use the [Renovate GitHub App](https
 
 
 ## Credits
-- inspired by https://github.com/cortinico/kotlin-android-template
-- PR & issue templates copied / adapted from https://github.com/nuxt/nuxt
-
-
-<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/thriving-dev/java-library-template">java-library-template</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://thriving.dev">thriving.dev</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0</a></p>
+- Created by https://github.com/thriving-dev/java-library-template
